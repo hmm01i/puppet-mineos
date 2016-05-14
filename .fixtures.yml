@@ -1,0 +1,8 @@
+fixtures:
+  repositories:
+    nodejs: "https://github.com/voxpupuli/puppet-nodejs.git"
+    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+    vcsrepo: "https://github.com/puppetlabs/puppetlabs-vcsrepo.git"
+    git: "https://github.com/puppetlabs/puppetlabs-git.git"
+  symlinks:
+    mineos: "#{source_dir}"

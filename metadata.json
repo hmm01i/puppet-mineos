@@ -1,0 +1,17 @@
+{
+  "name": "hmm01i-mineos",
+  "version": "0.1.0",
+  "author": "hmm01i",
+  "summary": "Install MineOS minecraft server",
+  "license": "Apache-2.0",
+  "source": "https://github.com/hmm01i/puppet-mineos.git",
+  "project_page": "https://github.com/hmm01i/puppet-mineos.git",
+  "issues_url": "https://github.com/hmm01i/puppet-mineos/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-nodejs"},
+    {"name":"puppetlabs-vcsrepo"},
+  ],
+  "data_provider": null
+}
+

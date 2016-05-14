@@ -1,0 +1,8 @@
+spec/fixtures/
+vendor/
+.bundle/
+bin/
+cache/
+*~
+log/
+Gemfile.lock

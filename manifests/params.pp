@@ -6,8 +6,9 @@ class mineos::params(){
     }
     default : { notice('OS not supported')}
   }
-  
+
   #MineOS settings
   $install_path='/usr/games/minecraft'
+  $ensure_service='running'
 
 }

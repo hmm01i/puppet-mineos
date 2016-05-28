@@ -8,48 +8,44 @@
 #
 # Document parameters here.
 #
-# * `sample parameter`
-# Explanation of what this parameter affects and what it defaults to.
-# e.g. "Specify one or more upstream ntp servers as an array."
+# * `depends`
+#  An array of package dependencies.
+#  Default: (Varies by Distro)
+#
+# * `install_path`
+#  Where to install MineOS. Default: ''/usr/games/minecraft'
 #
 # Variables
 # ----------
 #
 # Here you should define a list of variables that this module would require.
 #
-# * `sample variable`
-#  Explanation of how this variable affects the function of this class and if
-#  it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#  External Node Classifier as a comma separated list of hostnames." (Note,
-#  global variables should be avoided in favor of class parameters as
-#  of Puppet 2.6.)
-#
 # Examples
 # --------
 #
 # @example
 #    class { 'mineos':
-#      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
+#      install_path = ''/opt/mineos'
 #    }
 #
 # Authors
 # -------
 #
-# Author Name <author@domain.com>
+# Jacob Sohl <soothew@gmail.com>
 #
 # Copyright
 # ---------
 #
-# Copyright 2016 Your name here, unless otherwise noted.
+# Copyright 2016 Jacob Sohl
 #
 class mineos(
-  $depends      = $mineos::params::package_depends,
-  $install_path = $mineos::params::install_path
+  $depends        = $mineos::params::package_depends,
+  $install_path   = $mineos::params::install_path,
+  $ensure_service = $mineos::params::ensure_service
 ) inherits mineos::params {
-  include ::stdlib
-  include ::git
+
   validate_array($depends)
-  
+
   anchor{ 'mineos::begin': }
   anchor{ 'mineos::end': }
 
